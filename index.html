@@ -108,6 +108,31 @@
     a:hover {
       text-decoration: underline;
     }
+    .paper-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .paper {
+    flex: 1;
+    min-width: 300px;
+    background-color: #f9fbfd;
+    padding: 15px;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .paper-image img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
   </style>
 </head>
 <body>
@@ -126,8 +151,13 @@
   <main>
     <section>
       <h2>Research</h2>
-      <div class="paper">
-        <p><strong>Dai S</strong>, Cao Y, Duan P, et al. <em>SRes-NeRF: improved neural radiance fields for realism and accuracy of specular reflections</em>[C]//International Conference on Multimedia Modeling. Cham: Springer International Publishing, 2023: 306-317.</p>
+      <div class="paper-container">
+        <div class="paper">
+          <p><strong>Dai S</strong>, Cao Y, Duan P, et al. <em>SRes-NeRF: improved neural radiance fields for realism and accuracy of specular reflections</em>[C]//International Conference on Multimedia Modeling. Cham: Springer International Publishing, 2023: 306-317.</p>
+        </div>
+        <div class="paper-image">
+          <img src="SRes_NeRF.jpg" alt="Paper Illustration">
+        </div>
       </div>
     </section>
   </main>
