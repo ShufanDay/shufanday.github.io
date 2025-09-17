@@ -1,11 +1,123 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <title>我的个人主页</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>代书凡 — 计算机三维视觉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card:#0b1220cc;
+      --accent1: #6ee7b7;
+      --accent2: #60a5fa;
+      --glass: rgba(255,255,255,0.06);
+      --muted: #9aa4b2;
+      --glass-border: rgba(255,255,255,0.06);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6eef6;background:linear-gradient(180deg,#071022 0%, #07192b 60%);}
+    .container{max-width:980px;margin:40px auto;padding:28px}
+
+    .hero{
+      display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;padding:26px;background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:16px;border:1px solid var(--glass-border);backdrop-filter: blur(6px);
+    }
+    .avatar{width:120px;height:120px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent2),var(--accent1));box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+    .avatar svg{width:72px;height:72px;opacity:0.95}
+
+    h1{margin:0;font-size:28px;font-weight:800;letter-spacing:-0.5px}
+    .subtitle{margin-top:6px;color:var(--muted);font-weight:500}
+    .meta{margin-top:12px;color:var(--muted);font-size:14px}
+
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid var(--glass-border)}
+
+    .section-title{font-weight:700;margin-bottom:10px}
+    p{color:#cfe6ff;line-height:1.6}
+    .pub{background:linear-gradient(90deg, rgba(96,165,250,0.04), rgba(110,231,183,0.02));padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+    .pub cite{display:block;font-style:normal;color:var(--muted);font-size:14px}
+
+    .contact{display:flex;flex-direction:column;gap:8px}
+    .btn{display:inline-block;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#021124}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.06);color:var(--muted);background:transparent}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    @media (max-width:880px){.grid{grid-template-columns:1fr;}.avatar{width:96px;height:96px}.hero{grid-template-columns:96px 1fr}}
+  </style>
 </head>
 <body>
-  <h1>你好，我是 Alice</h1>
-  <p>欢迎来到我的个人主页！</p>
+  <div class="container">
+    <div class="hero">
+      <div class="avatar" aria-hidden="true">
+        <!-- simple svg avatar -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="4" fill="white" opacity="0.06"/>
+          <path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="white" opacity="0.85"/>
+          <path d="M4 20a8 8 0 0 1 16 0H4z" fill="white" opacity="0.18"/>
+        </svg>
+      </div>
+      <div>
+        <h1>代书凡</h1>
+        <div class="subtitle">安徽合肥人 · 郑州大学 硕士研究生</div>
+        <div class="meta">研究方向：计算机三维视觉</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <div class="section-title">关于我</div>
+          <p>我是代书凡，目前在郑州大学攻读硕士学位，研究方向为计算机三维视觉（3D computer vision）。我的研究兴趣包括基于神经渲染的三维重建、反射与高光建模、以及三维场景的风格化和重建精细化。</p>
+
+          <div style="height:14px"></div>
+
+          <div class="section-title">代表论文</div>
+          <div class="pub">
+            <strong>SRes-NeRF: improved neural radiance fields for realism and accuracy of specular reflections</strong>
+            <cite>Dai S, Cao Y, Duan P, et al. SRes-NeRF: improved neural radiance fields for realism and accuracy of specular reflections[C]//International Conference on Multimedia Modeling. Cham: Springer International Publishing, 2023: 306-317.</cite>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <div class="section-title">研究方向与技能</div>
+          <p>深度学习与三维视觉、NeRF 与 Gaussian Splatting、点云与 Mesh 处理、PyTorch 与 CUDA 编程、计算机图形学基础、数据集构建与评估指标设计。</p>
+
+        </div>
+
+        <div style="height:18px"></div>
+
+        <div class="card">
+          <div class="section-title">更多作品（可扩展）</div>
+          <p>你可以在此处展示更多论文、开源代码仓库、项目链接或博客文章。建议把重要项目放到一个可点击的列表中，并附上简短说明。</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <div class="section-title">联系我</div>
+          <div class="contact">
+            <div>邮箱：<strong>（在此填写你的邮箱）</strong></div>
+            <div>地点：安徽 合肥</div>
+            <a class="btn btn-primary" href="#">下载简历（PDF）</a>
+            <a class="btn btn-ghost" href="#">查看我的 GitHub</a>
+          </div>
+        </div>
+
+        <div style="height:18px"></div>
+
+        <div class="card">
+          <div class="section-title">引用与说明</div>
+          <p>如果你需要把论文以 BibTeX 或其他格式放到网页上，我可以帮你生成可复制的引用格式或按钮。</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © <strong>代书凡</strong> · 郑州大学 · 计算机三维视觉
+    </footer>
+  </div>
 </body>
 </html>
